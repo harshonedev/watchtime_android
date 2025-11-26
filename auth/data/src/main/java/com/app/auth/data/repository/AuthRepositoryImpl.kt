@@ -36,17 +36,18 @@ class AuthRepositoryImpl(
 
             supabaseAuthService.authWithGoogle(idToken, rawNonce)
 
-            val supabaseUser = supabaseAuthService.getSupabaseUser()
+            val supabaseUser = supabaseAuthService.getSupabaseUser() ?: throw Failure.AuthenticationError("Supabase user is null")
             // map FirebaseUser to UserEntity
             return UserEntity(
-                id = firebaseUser.uid,
-                name = firebaseUser.displayName ?: "Unknown",
-                email = firebaseUser.email ?: "No Email",
-                profilePictureUrl = firebaseUser.photoUrl?.toString(),
+                id = supabaseUser.id,
+                name = removeQuotes(supabaseUser.userMetadata?.get("name").toString()),
+                email = supabaseUser.email ?: "",
+                profilePictureUrl = removeQuotes(supabaseUser.userMetadata?.get("avatar_url").toString()),
             )
 
         } catch (e: Throwable) {
             // Handle any exceptions that may occur during the login process
+            Log.e(TAG, "login: $e", )
             throw e
 
         }
@@ -56,6 +57,7 @@ class AuthRepositoryImpl(
     override suspend fun logout(): Boolean {
         try {
             authService.signOut()
+            supabaseAuthService.signOut()
             return true
         } catch (e: Exception) {
             // Log the error or handle it as needed
@@ -66,7 +68,7 @@ class AuthRepositoryImpl(
 
     override fun isLoggedIn(): Boolean {
         try {
-            return authService.isLoggedIn()
+            return supabaseAuthService.isLoggedIn()
         } catch (e: Exception) {
             // Log the error or handle it as needed
             Log.e(TAG, "isLoggedIn: e", e)
@@ -77,14 +79,16 @@ class AuthRepositoryImpl(
     override fun getCurrentUser(): UserEntity? {
         try {
             val user = authService.getCurrentUser()
-            supabaseAuthService.getSupabaseUser()
-            return if (user != null) {
+            val supabaseUser = supabaseAuthService.getSupabaseUser()
+            return if (supabaseUser != null) {
+                Log.d(TAG, "getCurrentUser: ${supabaseUser.userMetadata}", )
                 UserEntity(
-                    id = user.uid,
-                    name = user.displayName ?: "Unknown",
-                    email = user.email ?: "No Email",
-                    profilePictureUrl = user.photoUrl?.toString(),
+                    id = supabaseUser.id,
+                    name = removeQuotes(supabaseUser.userMetadata?.get("name").toString()),
+                    email = supabaseUser.email ?: "",
+                    profilePictureUrl = removeQuotes(supabaseUser.userMetadata?.get("avatar_url").toString()),
                 )
+
             } else {
                 null
             }
@@ -93,6 +97,11 @@ class AuthRepositoryImpl(
             Log.e(TAG, "getCurrentUser: e", e)
             return null
         }
+    }
+
+
+    private fun removeQuotes(input: String): String {
+        return input.trim('"')
     }
 
 
