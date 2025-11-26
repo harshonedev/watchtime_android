@@ -56,4 +56,9 @@ dependencies {
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
 
+    // supabase
+    implementation(platform(libs.bom))
+    implementation(libs.auth.kt)
+    implementation(libs.ktor.client.android)
+
 }

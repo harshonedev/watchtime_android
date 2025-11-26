@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="default_web_client_id">1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com</string>
+    <string name="supabase_url">https://supabasekong-cwwkw0soocg8o8wko80kwocs.harshone.dev</string>
+    <string name="supabase_anon_key">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc2NDEzNDA0MCwiZXhwIjo0OTE5ODA3NjQwLCJyb2xlIjoiYW5vbiJ9.JCMBx_6An3PcUY1Gg4yLk2AAU98bcCj9_QDphgrmabw</string>
 </resources>

@@ -2,12 +2,14 @@ package com.app.auth.data.services
 
 import android.content.Context
 import android.util.Log
+import androidx.core.content.ContextCompat.getString
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.Credential
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.exceptions.GetCredentialException
+import com.app.auth.data.R
 import com.app.core.utils.failures.Failure
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
@@ -16,11 +18,17 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
+import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.auth.providers.Google
+import io.github.jan.supabase.auth.providers.builtin.IDToken
+import io.github.jan.supabase.exceptions.RestException
 import kotlinx.coroutines.tasks.await
+import java.security.MessageDigest
+import java.util.UUID
 
 class FirebaseAuthService(
     private val context: Context,
-    private val googleIdOption: GetGoogleIdOption
 ) {
     private val auth = Firebase.auth
     private val credentialManager = CredentialManager.create(context)
@@ -29,7 +37,12 @@ class FirebaseAuthService(
         private const val TAG = "FirebaseAuthService"
     }
 
-    suspend fun googleSignIn(): String {
+    suspend fun googleSignIn(hashedNonce : String): String {
+        val googleIdOption =  GetGoogleIdOption.Builder()
+            .setServerClientId(context.getString(R.string.default_web_client_id))
+            .setFilterByAuthorizedAccounts(false)
+            .setNonce(hashedNonce)
+            .build()
         val request = GetCredentialRequest.Builder()
             .addCredentialOption(googleIdOption)
             .build()
@@ -69,6 +82,8 @@ class FirebaseAuthService(
         }
 
     }
+
+
 
     suspend fun firebaseAuthWithGoogle(idToken: String): FirebaseUser? {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
