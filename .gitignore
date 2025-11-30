@@ -14,5 +14,15 @@
 .cxx
 local.properties
 
+# Build files
+**/build/
+*.apk
+*.ap_
+*.aab
+
+# Gradle files
+.gradle/
+.kotlin/
+
 # API Keys and sensitive configuration
 core/network/src/main/java/com/app/core/utils/constants/Constants.kt
