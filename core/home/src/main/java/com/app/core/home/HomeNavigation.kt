@@ -37,6 +37,7 @@ fun HomeNavigation(
     animatedVisibilityScope: AnimatedVisibilityScope,
     modifier: Modifier = Modifier,
     navigateToAuth: () -> Unit,
+    navigateToQrScan: () -> Unit = {},
     navigateToMediaDetails: (tmdbId: Int, name: String, posterUrl: String?, key: String) -> Unit
 ) {
 
@@ -85,10 +86,14 @@ fun HomeNavigation(
         composable<HomeDestination.Profile> {
             ProfileScreen(
                 modifier = modifier,
-                themeViewModel = themeViewModel
-            ) {
-                navigateToAuth()
-            }
+                themeViewModel = themeViewModel,
+                onNavigateToAuth = {
+                    navigateToAuth()
+                },
+                onNavigateToQrScan = {
+                    navigateToQrScan()
+                }
+            )
         }
     }
 

@@ -39,6 +39,10 @@ android {
 dependencies {
     // Domain layer
     implementation(project(":profile:domain"))
+    implementation(project(":auth:domain"))
+
+    // Auth UI for QR scanning
+    implementation(project(":auth:ui"))
 
     // Core UI for theme
     implementation(project(":core:ui"))

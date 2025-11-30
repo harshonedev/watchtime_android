@@ -7,7 +7,8 @@ import org.koin.dsl.module
 val profileUiModule = module {
     viewModel<ProfileViewModel> {
         ProfileViewModel(
-            profileRepository = get()
+            profileRepository = get(),
+            authRepository = get()
         )
     }
 }

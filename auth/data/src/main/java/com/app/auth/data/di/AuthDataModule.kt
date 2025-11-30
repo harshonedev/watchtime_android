@@ -6,6 +6,7 @@ import com.app.auth.data.repository.AuthRepositoryImpl
 import com.app.auth.data.services.FirebaseAuthService
 import com.app.auth.data.services.SupabaseAuthService
 import com.app.auth.domain.repository.AuthRepository
+import com.app.core.network.api.UserApiService
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.auth.Auth
@@ -29,7 +30,12 @@ val authDataModule = module {
     }
 
     single<AuthRepository> {
-        AuthRepositoryImpl(get<FirebaseAuthService>(), get<SupabaseAuthService>())
+        AuthRepositoryImpl(
+            context = get<Context>(),
+            authService = get<FirebaseAuthService>(),
+            supabaseAuthService = get<SupabaseAuthService>(),
+            apiService = get<UserApiService>()
+        )
     }
 
     single<SupabaseClient> { createSupabaseClient(

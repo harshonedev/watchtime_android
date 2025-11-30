@@ -35,7 +35,9 @@ android {
 dependencies {
     // Domain layer
     implementation(project(":profile:domain"))
-    implementation(project(":auth:domain"))
+    implementation(project(":auth:data"))
+    implementation(project(":core:network"))
+    implementation(project(":core:utils"))
 
     // Core dependencies
     implementation(libs.androidx.core.ktx)

@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -68,7 +69,8 @@ fun ProfileScreen(
     modifier: Modifier = Modifier,
     viewModel: ProfileViewModel = koinViewModel(),
     themeViewModel: ThemeViewModel,
-    onNavigateToAuth: () -> Unit
+    onNavigateToAuth: () -> Unit,
+    onNavigateToQrScan: () -> Unit = {}
 ) {
     val snackBarHostState = remember { SnackbarHostState() }
     val profileState = viewModel.profileState.value
@@ -125,6 +127,7 @@ fun ProfileScreen(
                     userProfile = profileState.userProfile,
                     themeViewModel = themeViewModel,
                     onLogout = { showLogoutDialog = true },
+                    onNavigateToQrScan = onNavigateToQrScan,
                     modifier = modifier.padding(innerPadding)
                 )
             }
@@ -193,6 +196,7 @@ private fun ProfileContent(
     userProfile: UserProfile,
     themeViewModel: ThemeViewModel,
     onLogout: () -> Unit,
+    onNavigateToQrScan: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -209,6 +213,7 @@ private fun ProfileContent(
         // Menu Items
         ProfileMenuSection(
             onLogout = onLogout,
+            onNavigateToQrScan = onNavigateToQrScan,
             themeViewModel = themeViewModel
         )
 
@@ -305,6 +310,7 @@ private fun ProfileAvatar(
 @Composable
 private fun ProfileMenuSection(
     onLogout: () -> Unit,
+    onNavigateToQrScan: () -> Unit,
     themeViewModel: ThemeViewModel,
     modifier: Modifier = Modifier
 ) {
@@ -349,6 +355,19 @@ private fun ProfileMenuSection(
                     onCheckedChange = { themeViewModel.toggleTheme() }
                 )
             }
+
+            HorizontalDivider(
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                thickness = DividerDefaults.Thickness,
+                color = MaterialTheme.colorScheme.outlineVariant
+            )
+
+            // Add to Device - QR Code Scanner
+            ProfileMenuItem(
+                icon = Icons.Default.Add,
+                title = "Add to Device",
+                onClick = onNavigateToQrScan
+            )
 
             // About - Navigate to URL
             ProfileMenuItem(

@@ -12,6 +12,9 @@ sealed class Screen {
     object Auth : Screen()
 
     @Serializable
+    object QrScan : Screen()
+
+    @Serializable
     data class MediaDetails(
         val id: Int,
         val type: String,

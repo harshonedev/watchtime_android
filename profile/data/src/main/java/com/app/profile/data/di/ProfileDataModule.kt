@@ -7,7 +7,9 @@ import org.koin.dsl.module
 val profileDataModule = module {
     single<ProfileRepository> {
         ProfileRepositoryImpl(
-            authRepository = get()
+            supabaseAuthService = get(),
+            userApiService = get()
         )
     }
 }
+

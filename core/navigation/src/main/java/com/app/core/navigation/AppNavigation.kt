@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.app.auth.ui.screens.AuthScreen
+import com.app.auth.ui.screens.QrScanScreen
 import com.app.auth.ui.states.AuthState
 import com.app.auth.ui.viewmodels.AuthViewModel
 import com.app.core.home.HomeScreen
@@ -46,6 +47,9 @@ fun AppNavigation(
                             }
                         }
                     },
+                    navigateToQrScan = {
+                        navController.navigate(Screen.QrScan)
+                    },
                     themeViewModel = themeViewModel,
                     navigateToMediaDetails = { mediaId, mediaType, posterUrl, posterKey ->
                         navController.navigate(
@@ -68,6 +72,14 @@ fun AppNavigation(
                         }
                     }
                 }
+            }
+
+            composable<Screen.QrScan> {
+                QrScanScreen(
+                    onScanComplete = {
+                        navController.popBackStack()
+                    }
+                )
             }
 
             composable<Screen.MediaDetails> { backStackEntry ->

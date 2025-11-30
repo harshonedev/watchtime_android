@@ -26,6 +26,7 @@ fun HomeScreen(
     animatedVisibilityScope: AnimatedVisibilityScope,
     themeViewModel: ThemeViewModel,
     navigateToAuth: () -> Unit,
+    navigateToQrScan: () -> Unit = {},
     navigateToMediaDetails: (Int, String, String?, String) -> Unit
 ) {
     val navController = rememberNavController()
@@ -80,6 +81,7 @@ fun HomeScreen(
             animatedVisibilityScope = animatedVisibilityScope,
             navigateToMediaDetails = navigateToMediaDetails,
             navigateToAuth = navigateToAuth,
+            navigateToQrScan = navigateToQrScan,
             themeViewModel = themeViewModel
         )
     }

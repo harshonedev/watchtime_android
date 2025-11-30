@@ -1,5 +1,5 @@
 [versions]
-agp = "8.12.0"
+agp = "8.13.1"
 bom = "3.2.6"
 coilCompose = "3.3.0"
 credentials = "1.5.0"
@@ -28,6 +28,16 @@ jetbrainsKotlinJvm = "2.2.0"
 retrofit = "3.0.0"
 okhttp = "5.1.0"
 retrofitKotlinxSerialization = "1.0.0"
+desugarJdkLibs = "2.1.4"
+composeTv = "1.1.0"
+leanback = "1.0.0"
+tvFoundation = "1.0.0-alpha12"
+tvMaterial = "1.0.1"
+zxingCore = "3.5.3"
+zxingAndroid = "4.3.0"
+camerax = "1.5.1"
+mlkitBarcode = "17.3.0"
+accompanist = "0.36.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -83,6 +93,27 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 retrofit-kotlinx-serialization = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerialization" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+
+# TV dependencies
+androidx-tv-foundation = { module = "androidx.tv:tv-foundation", version.ref = "tvFoundation" }
+androidx-tv-material = { module = "androidx.tv:tv-material", version.ref = "tvMaterial" }
+androidx-leanback = { module = "androidx.leanback:leanback", version.ref = "leanback" }
+androidx-leanback-preference = { module = "androidx.leanback:leanback-preference", version.ref = "leanback" }
+
+# QR Code libraries
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxingCore" }
+zxing-android = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroid" }
+
+# Camera and ML Kit for QR scanning
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" }
+mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkitBarcode" }
+
+# Accompanist
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

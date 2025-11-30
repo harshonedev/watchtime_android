@@ -1,6 +1,8 @@
 package com.app.core.utils.constants
 
 object Constants {
+
+    const val API_SERVER_URL = "https://boc4cgg8sgkkgw84wk8gk80c.harshone.dev/api/"
     const val TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/"
     const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
     const val TMDB_API_KEY =

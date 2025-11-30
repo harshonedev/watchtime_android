@@ -39,6 +39,10 @@ class SupabaseAuthService (
          return supabase.auth.currentUserOrNull()
      }
 
+    fun getToken() : String? {
+        return supabase.auth.currentAccessTokenOrNull()
+    }
+
     suspend fun signOut() {
         supabase.auth.signOut()
     }

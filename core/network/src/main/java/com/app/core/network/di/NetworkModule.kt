@@ -1,6 +1,9 @@
 package com.app.core.network.di
 
+import com.app.core.network.api.CollectionsApiService
 import com.app.core.network.api.TMDBApiService
+import com.app.core.network.api.TvAuthApiService
+import com.app.core.network.api.UserApiService
 import com.app.core.utils.constants.Constants
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -34,14 +37,34 @@ val networkModule = module {
     // Retrofit instance
     single {
         Retrofit.Builder()
-            .baseUrl(Constants.TMDB_BASE_URL)
+            .baseUrl(Constants.API_SERVER_URL)
             .client(get<OkHttpClient>())
             .addConverterFactory(get<Json>().asConverterFactory("application/json".toMediaType()))
             .build()
     }
 
-    // TMDB API Service
+    // TMDB API Services
     single<TMDBApiService> {
-        get<Retrofit>().create(TMDBApiService::class.java)
+        Retrofit.Builder()
+            .baseUrl(Constants.TMDB_BASE_URL)
+            .client(get<OkHttpClient>())
+            .addConverterFactory(get<Json>().asConverterFactory("application/json".toMediaType()))
+            .build()
+            .create(TMDBApiService::class.java)
+    }
+
+    // User Profile API Service
+    single<UserApiService> {
+        get<Retrofit>().create(UserApiService::class.java)
+    }
+
+    // Collections API Service
+    single<CollectionsApiService> {
+        get<Retrofit>().create(CollectionsApiService::class.java)
+    }
+
+    // TV Auth API Service
+    single<TvAuthApiService> {
+        get<Retrofit>().create(TvAuthApiService::class.java)
     }
 }

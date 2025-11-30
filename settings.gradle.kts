@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "WatchTime"
 include(":app")
+include(":app-tv")
 include(":auth:ui")
 include(":core:ui")
 include(":auth:domain")
@@ -46,3 +47,12 @@ include(":collections:ui")
 include(":profile:ui")
 include(":profile:domain")
 include(":profile:data")
+
+// TV modules
+include(":core:tv-ui")
+include(":auth:tv-ui")
+include(":popular:tv-ui")
+include(":discover:tv-ui")
+include(":media:tv-ui")
+include(":collections:tv-ui")
+
