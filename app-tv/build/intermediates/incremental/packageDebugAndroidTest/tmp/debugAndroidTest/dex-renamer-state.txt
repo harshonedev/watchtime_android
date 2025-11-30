@@ -1,0 +1,7 @@
+#Sun Nov 30 21:01:02 IST 2025
+base.0=/home/harsh/StudioProjects/watchtime_android/app-tv/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
+base.1=/home/harsh/StudioProjects/watchtime_android/app-tv/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

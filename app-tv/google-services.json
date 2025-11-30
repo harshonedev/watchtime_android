@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "1086836065792",
+    "project_id": "watchtime-4c5fd",
+    "storage_bucket": "watchtime-4c5fd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086836065792:android:c8d3be1f7206244732bae5",
+        "android_client_info": {
+          "package_name": "com.app.watchtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086836065792-aqtlncumng0htbjq65h2hcp8pkcmfi4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.watchtime",
+            "certificate_hash": "c32021d2e5f7811d45e16d09187ec3ae5de258f1"
+          }
+        },
+        {
+          "client_id": "1086836065792-q7760jf8otaj59l6ask86kfgkhvm3csh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.watchtime",
+            "certificate_hash": "bd28e59ba1845f4e61d89b3b08adf8125e0c3deb"
+          }
+        },
+        {
+          "client_id": "1086836065792-scov3poa873mhjfgjj5m33katitksnnd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.watchtime",
+            "certificate_hash": "973b576bce48c35e8970fe71cb0f0671a8be1b7d"
+          }
+        },
+        {
+          "client_id": "1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1lg6rRy5XCNcbFrWH-XIUrnTgWsnsHrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086836065792:android:c5e188502ab4eee232bae5",
+        "android_client_info": {
+          "package_name": "com.app.watchtime.tv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1lg6rRy5XCNcbFrWH-XIUrnTgWsnsHrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

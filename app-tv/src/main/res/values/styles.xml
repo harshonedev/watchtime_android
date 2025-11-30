@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom theme for TV app using Material3 components -->
+    <style name="Theme.WatchTime.TV" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Optimize for TV viewing -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
+

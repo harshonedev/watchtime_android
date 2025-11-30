@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1086836065792-hm2nhkasm9iebbmd4v3u8r4m0287hjad.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1086836065792</string>
+    <string name="google_api_key" translatable="false">AIzaSyD1lg6rRy5XCNcbFrWH-XIUrnTgWsnsHrY</string>
+    <string name="google_app_id" translatable="false">1:1086836065792:android:c5e188502ab4eee232bae5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD1lg6rRy5XCNcbFrWH-XIUrnTgWsnsHrY</string>
+    <string name="google_storage_bucket" translatable="false">watchtime-4c5fd.firebasestorage.app</string>
+    <string name="project_id" translatable="false">watchtime-4c5fd</string>
+</resources>

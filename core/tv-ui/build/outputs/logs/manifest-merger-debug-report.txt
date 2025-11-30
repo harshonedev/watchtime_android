@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml:2:13-83
+INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml:2:13-83
+	package
+		INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml
+	xmlns:android
+		ADDED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml:2:23-81
+uses-sdk
+INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml reason: use-sdk injection requested
+INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml
+INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml
+	android:targetSdkVersion
+		INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml
+	android:minSdkVersion
+		INJECTED from /home/harsh/StudioProjects/watchtime_android/core/tv-ui/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14057470162226356249.xml
